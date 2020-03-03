@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb286115-343f-472c-9844-245f81b6ce0b" name="Default Changelist" comment="" />
+    <list default="true" id="cb286115-343f-472c-9844-245f81b6ce0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/L2Q1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Lab3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Lab4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/LinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/ListNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/SimpleLog/SimpleLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/SmartPhone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/StarList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/TextFileLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Tutorial1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/UNOArrayImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/UNOLinkedListImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/lab1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/lab1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/com/company/BinaryFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/com/company/BinaryFile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DS/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/BinaryFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/BinaryFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,11 +34,27 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Kotlin File" />
         <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Y14D7bsGNkvFNnFG5DEHUGReLG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.company.SimpleLog" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -58,5 +96,16 @@
       <updated>1582096643055</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

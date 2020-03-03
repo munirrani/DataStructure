@@ -1,6 +1,8 @@
 package com.company;
 
+import javax.naming.PartialResultException;
 import java.io.IOException;
+import java.util.Random;
 
 public class Main {
 
@@ -78,7 +80,51 @@ public class Main {
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
+//
+        /*
+        LAB 2
+         */
+         //Q1
+//        int N = 20;
+//        int bound = 101;
+//        L2Q1<Integer> test = new L2Q1<Integer>(N);
+//        Random random = new Random();
+//        while (test.linkedListSize() != N) test.insertLinkedList(random.nextInt(bound));
+//        while (test.arraySize() != N) test.insertArray(random.nextInt(bound));
+//        test.sortLinkedList();
+//        test.sortArray();
+//        System.out.println("Generating " + N + " non-duplicate integer within 0-100");
+//        test.display();
 
+        //Q2
+//        int size = 5;
+//        System.out.println("Create a text file with maximum record equal to " + size);
+//        TextFileLog<String> textFileLog = new TextFileLog<>(size);
+//        textFileLog.insert("James");
+//        textFileLog.insert("Ahmad");
+//        textFileLog.insert("Siti");
+//        textFileLog.insert("Ramesh");
+//        textFileLog.insert("John");
+//
+//        System.out.println();
+//        System.out.println("Adding another record");
+//        textFileLog.insert("Fairuz");
+//        textFileLog.search("Siti");
+//        textFileLog.clear();
+//        System.out.println("The Text File Log Size " + textFileLog.size());
 
+        //Q3
+       // UNOArrayImplementation<String> game = new UNOArrayImplementation<String>("Player 1");
+
+        /*
+         LAB3
+         */
+        //Lab3 lab3 = new Lab3();
+
+        /*
+        LAB4
+         */
+        Lab4 lab4 = new Lab4();
+        //Tutorial1 tutorial1 = new Tutorial1();
     }
 }
