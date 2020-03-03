@@ -100,23 +100,19 @@ public class Lab4 {
         linkedList.addNode("MAN");
         linkedList.addNode("LIV");
         linkedList.addNode("TOT");
+        System.out.print("The list contains of ");
         linkedList.showList();
-        linkedList.removeAtIndex(1);
+        System.out.println("Remove all the word that contains of the A character using iterator");
+
+        Iterator<String> iterator = linkedList.listIterator();
+        while (iterator.hasNext()) {
+            String it = iterator.next();
+            if (it.contains("A")) {
+                iterator.remove();
+            }
+        }
+        System.out.print("The updated list contains ");
         linkedList.showList();
-//        System.out.print("The list contains of ");
-//        linkedList.showList();
-//        System.out.println("Remove all the word that contains of the A character using iterator");
-//        /*
-//        demonstrate the use of the iterator methods to remove the word that consists of the A character
-//         */
-//        Iterator<String> iterator = linkedList.listIterator();
-//        while (iterator.hasNext()) {
-//            if (iterator.next().contains("A")) {
-//                iterator.remove();
-//            }
-//        }
-//        System.out.print("The updated list contains ");
-//        linkedList.showList();
     }
 
     public static void reverseList(LinkedList<Character> linkedList, ListNode node) {

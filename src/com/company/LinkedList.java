@@ -138,7 +138,7 @@ public class LinkedList<T extends Comparable<T>> {
             int count = 0;
             ListNode currentNode = head;
             while (currentNode.getLink() != null) {
-                if (count == index) {
+                if (count == index - 1) {
                     break;
                 } else {
                     currentNode = currentNode.getLink();
@@ -317,7 +317,7 @@ public class LinkedList<T extends Comparable<T>> {
         @Override
         public boolean hasNext() {
             count++;
-            return currentNode.getLink() != null;
+            return currentNode != null;
         }
 
         @Override
@@ -329,8 +329,8 @@ public class LinkedList<T extends Comparable<T>> {
 
         @Override
         public void remove() {
-            System.out.println(count);
             removeAtIndex(count);
+            count--;
         }
     }
 }
