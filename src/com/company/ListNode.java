@@ -21,6 +21,6 @@ public class ListNode<T> {
     public void setLink(ListNode listNode) { this.listNode = listNode; }
     public ListNode getLink() { return listNode; }
     public String toString() {
-        return data + "--> ";
+        return data + " --> ";
     }
 }

@@ -136,18 +136,38 @@ public class Lab4 {
 //            }
 //        }
 //        doubleLinkedList.showList();
-        
+
+        //Q7
+        System.out.print("Enter a sentence : ");
+        Scanner scanner = new Scanner(System.in);
+        String sentence = scanner.nextLine();
+        System.out.println();
+        String[] words = sentence.split(" ");
+        CircularLinkedList<String> circularLinkedList = new CircularLinkedList<>();
+        for (String word : words) {
+            circularLinkedList.addCircularNode(word);
+        }
+        System.out.println("The words in the circular linked list");
+        circularLinkedList.showCircularList();
+        System.out.println("After delete a word");
+        circularLinkedList.deleteCircularNode();
+        circularLinkedList.showCircularList();
+        System.out.println("The second item in the list is " + circularLinkedList.getCircularItem(1));
+
+        //Q8
+
+
     }
 
-    public static void reverseList(LinkedList<Character> linkedList, ListNode node) {
-        ListNode head = linkedList.getHead();
-        if (head.getLink() != null) {
-            ListNode newNode = new ListNode(head.getData(), node);
-            linkedList.setHead(linkedList.getHead().getLink());
-            reverseList(linkedList, newNode);
-        } else {
-            linkedList.setHead(new ListNode(head.getData(), node)); // last node
-            linkedList.showList();
-        }
-    }
+//    public static void reverseList(LinkedList<Character> linkedList, ListNode node) {
+//        ListNode head = linkedList.getHead();
+//        if (head.getLink() != null) {
+//            ListNode newNode = new ListNode(head.getData(), node);
+//            linkedList.setHead(linkedList.getHead().getLink());
+//            reverseList(linkedList, newNode);
+//        } else {
+//            linkedList.setHead(new ListNode(head.getData(), node)); // last node
+//            linkedList.showList();
+//        }
+//    }
 }
