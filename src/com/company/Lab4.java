@@ -86,33 +86,57 @@ public class Lab4 {
         //StarList starList = new StarList();
 
         //Q5
-        /*
-        Iterator is used to cycle through a linked list to get the data of an element or remove an element.
-        Create an inner class LinkedListIterator in LinkedList.java that implements the Iterator.
-        Then, insert the following word ARS, CHE, LEI, MAN, LIV, TOT into the LinkedList.
-        After that, demonstrate the use of the iterator methods to remove the word that consists of the A character.
-        Create the listIterator method in the LinkedList.java to return the iterator
-         */
-        LinkedList<String> linkedList = new LinkedList<>();
-        linkedList.addNode("ARS");
-        linkedList.addNode("CHE");
-        linkedList.addNode("LEI");
-        linkedList.addNode("MAN");
-        linkedList.addNode("LIV");
-        linkedList.addNode("TOT");
-        System.out.print("The list contains of ");
-        linkedList.showList();
-        System.out.println("Remove all the word that contains of the A character using iterator");
+//        LinkedList<String> linkedList = new LinkedList<>();
+//        linkedList.addNode("ARS");
+//        linkedList.addNode("CHE");
+//        linkedList.addNode("LEI");
+//        linkedList.addNode("MAN");
+//        linkedList.addNode("LIV");
+//        linkedList.addNode("TOT");
+//        System.out.print("The list contains of ");
+//        linkedList.showList();
+//        System.out.println("Remove all the word that contains of the A character using iterator");
+//
+//        Iterator<String> iterator = linkedList.listIterator();
+//        while (iterator.hasNext()) {
+//            String it = iterator.next();
+//            if (it.contains("A")) {
+//                iterator.remove();
+//            }
+//        }
+//        System.out.print("The updated list contains ");
+//        linkedList.showList();
 
-        Iterator<String> iterator = linkedList.listIterator();
-        while (iterator.hasNext()) {
-            String it = iterator.next();
-            if (it.contains("A")) {
-                iterator.remove();
-            }
-        }
-        System.out.print("The updated list contains ");
-        linkedList.showList();
+        //Q6
+//        DoubleLinkedList<Integer> doubleLinkedList = new DoubleLinkedList<>();
+//        Random random = new Random();
+//        int randomNumber;
+//        System.out.print("The random numbers are : ");
+//        for (int i = 0; i < 10; i++) {
+//            randomNumber = random.nextInt(101);
+//            System.out.print(randomNumber + " ");
+//            doubleLinkedList.add(randomNumber);
+//        }
+//        System.out.println();
+//        System.out.println("Insert the random numbers into a doubly linked list");
+//        doubleLinkedList.showList();
+//        System.out.println("Remove a number from the third position");
+//        doubleLinkedList.removeAtIndex(2);
+//        doubleLinkedList.showList();
+//        System.out.println("Replace the number in seventh position with 999");
+//        doubleLinkedList.set(6, 999);
+//        doubleLinkedList.showList();
+//        System.out.println("Remove all even number from the doubly linked list");
+//        int number;
+//        for (int i = 0; i < doubleLinkedList.length(); i++) {
+//            number = (int) doubleLinkedList.get(i).getData();
+//            if (number % 2 == 0) {
+//                doubleLinkedList.removeAtIndex(i);
+//                i--;
+//            }
+//        }
+//        doubleLinkedList.showList();
+        
     }
 
     public static void reverseList(LinkedList<Character> linkedList, ListNode node) {

@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb286115-343f-472c-9844-245f81b6ce0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/company/DoubleLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/DoubleListNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/DS/com/company/Lab4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/com/company/Lab4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/com/company/LinkedList$LinkedListIterator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/com/company/LinkedList$LinkedListIterator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DS/com/company/LinkedList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DS/com/company/LinkedList.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Lab4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Lab4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/LinkedList.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +86,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
