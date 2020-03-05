@@ -2,6 +2,9 @@ package com.company;
 
 import com.sun.jdi.InvalidTypeException;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
 
@@ -24,12 +27,12 @@ public class Lab3 {
         Define a recursive method that read lines of text from one file and then output the lines in reverse order in another file.
          */
 
-//        String fileName = "lab1.txt";
-//        try {
-//            Scanner scanner = new Scanner(new FileInputStream(fileName));
-//            PrintWriter printWriter = new PrintWriter(new FileOutputStream(fileName.replace("lab1", "lab1-reversed"), true));
-//            reverse(scanner.nextLine(), scanner, printWriter);
-//        } catch (IOException e) { }
+        String fileName = "lab1.txt";
+        try {
+            Scanner scanner = new Scanner(new FileInputStream(fileName));
+            PrintWriter printWriter = new PrintWriter(new FileOutputStream(fileName.replace("lab1", "lab1-reversed"), true));
+            reverse(scanner.nextLine(), scanner, printWriter);
+        } catch (IOException e) { }
 
         /*
         Define a recursive method that displays all n! Permutations of an integer array elements.

@@ -163,74 +163,77 @@ public class Lab4 {
         Then, insert a few music object into the CircularLinkedList.
         After that, modify the code below to allow the users to play the music.
          */
-        Music music1 = new Music("Music 1", "music1.mp3");
-        Music music2 = new Music("Music 2", "music2.mp3");
-        Music music3 = new Music("Music 3", "music3.mp3");
-        Music music4 = new Music("Music 4", "music4.mp3");
-        CircularLinkedList<Music> musicCircularLinkedList = new CircularLinkedList<>();
-        musicCircularLinkedList.addCircularNode(music1);
-        musicCircularLinkedList.addCircularNode(music2);
-        musicCircularLinkedList.addCircularNode(music3);
-        musicCircularLinkedList.addCircularNode(music4);
-        Iterator<Music> musicIterator = musicCircularLinkedList.circularLinkedListIterator();
+//        Music music1 = new Music("Music 1", "music1.mp3");
+//        Music music2 = new Music("Music 2", "music2.mp3");
+//        Music music3 = new Music("Music 3", "music3.mp3");
+//        Music music4 = new Music("Music 4", "music4.mp3");
+//        CircularLinkedList<Music> musicCircularLinkedList = new CircularLinkedList<>();
+//        musicCircularLinkedList.addCircularNode(music1);
+//        musicCircularLinkedList.addCircularNode(music2);
+//        musicCircularLinkedList.addCircularNode(music3);
+//        musicCircularLinkedList.addCircularNode(music4);
+//        Iterator<Music> musicIterator = musicCircularLinkedList.circularLinkedListIterator();
+//
+//        System.out.println("My Music Playlist");
+//        Scanner scanner = new Scanner(System.in);
+//        int input;
+//        int musicIndex = 0;
+//        while (true) {
+//            musicCircularLinkedList.showCircularList();
+//            System.out.print("1 Play Music | 2 Forward | 3 Backward | 4 Stop | -1 Exit : ");
+//            input = scanner.nextInt();
+//            scanner.nextLine();
+//
+//            switch(input) {
+//                case 1:
+//                    System.out.println("Play Music : " + musicCircularLinkedList.getCircularItem(musicIndex));
+//                    playMusic(musicIterator.next().getFileName());
+//                    break;
+//                case 2:
+//                    if (musicIndex == 3) {
+//                        musicIndex = 0;
+//                    } else {
+//                        musicIndex++;
+//                    }
+//                    if (mediaPlayer != null) mediaPlayer.stop();
+//                    System.out.println("Forward One Position - Play Music : " + musicCircularLinkedList.getCircularItem(musicIndex));
+//                    playMusic(musicIterator.next().getFileName());
+//                    break;
+//                case 3:
+//                    if (musicIndex == 0) {
+//                        musicIndex = 3;
+//                    } else {
+//                        musicIndex--;
+//                    }
+//                    if(mediaPlayer != null) mediaPlayer.stop();
+//                    System.out.println("Backward One Position - Play Music : " + musicCircularLinkedList.getCircularItem(musicIndex));
+//                    playMusic(musicCircularLinkedList.getCircularItem(musicIndex).getFileName());
+//                    break;
+//                case 4:
+//                    stopMusic();
+//                    break;
+//                default:
+//                    break;
+//            }
+//
+//            if (input == -1) {
+//                System.out.println("Exit Music Player");
+//                System.exit(0);
+//                break;
+//            }
+//        }
+        //Tutorial2 tutorial2 = new Tutorial2();
 
-        System.out.println("My Music Playlist");
-        Scanner scanner = new Scanner(System.in);
-        int input;
-        int musicIndex = 0;
-        while (true) {
-            musicCircularLinkedList.showCircularList();
-            System.out.print("1 Play Music | 2 Forward | 3 Backward | 4 Stop | -1 Exit : ");
-            input = scanner.nextInt();
-            scanner.nextLine();
-
-            switch(input) {
-                case 1:
-                    System.out.println("Play Music : " + musicCircularLinkedList.getCircularItem(musicIndex));
-                    playMusic(musicIterator.next().getFileName());
-                    break;
-                case 2:
-                    if (musicIndex == 3) {
-                        musicIndex = 0;
-                    } else {
-                        musicIndex++;
-                    }
-                    if (mediaPlayer != null) mediaPlayer.stop();
-                    System.out.println("Forward One Position - Play Music : " + musicCircularLinkedList.getCircularItem(musicIndex));
-                    playMusic(musicIterator.next().getFileName());
-                    break;
-                case 3:
-                    if (musicIndex == 0) {
-                        musicIndex = 3;
-                    } else {
-                        musicIndex--;
-                    }
-                    if(mediaPlayer != null) mediaPlayer.stop();
-                    System.out.println("Backward One Position - Play Music : " + musicCircularLinkedList.getCircularItem(musicIndex));
-                    playMusic(musicCircularLinkedList.getCircularItem(musicIndex).getFileName());
-                    break;
-                case 4:
-                    stopMusic();
-                    break;
-                default:
-                    break;
-            }
-
-            if (input == -1) {
-                System.out.println("Exit Music Player");
-                System.exit(0);
-                break;
-            }
-        }
 
     }
 
-    JFXPanel panel = new JFXPanel();
+    JFXPanel panel;
     String paths;
     Media hit;
     MediaPlayer mediaPlayer;
 
     private void playMusic(String song) {
+        panel = new JFXPanel();
         paths = Paths.get(song).toUri().toString();
         hit = new Media(paths);
         mediaPlayer = new MediaPlayer(hit);

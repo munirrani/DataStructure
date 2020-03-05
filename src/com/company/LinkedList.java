@@ -5,6 +5,7 @@ import java.util.Iterator;
 public class LinkedList<T extends Comparable<T>> {
 
     private ListNode head;
+    private int[] arr;
 
     public LinkedList() {
         head = null;
@@ -92,7 +93,7 @@ public class LinkedList<T extends Comparable<T>> {
                 while (true) {
                     //System.out.println(t + " " + number);
                     if(currentNode.getLink() != null) {
-                        if (t.compareTo((T)currentNode.getLink().getData()) < 0) { //IT WORKS!!!
+                        if (t.compareTo((T)currentNode.getLink().getData()) < 0) {
                             ListNode newNode = new ListNode(t, currentNode.getLink());
                             currentNode.setLink(newNode);
                             break;

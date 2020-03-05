@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.Lab5.Lab5;
+
 import javax.naming.PartialResultException;
 import java.io.IOException;
 import java.util.Random;
@@ -85,16 +87,8 @@ public class Main {
         LAB 2
          */
          //Q1
-//        int N = 20;
-//        int bound = 101;
-//        L2Q1<Integer> test = new L2Q1<Integer>(N);
-//        Random random = new Random();
-//        while (test.linkedListSize() != N) test.insertLinkedList(random.nextInt(bound));
-//        while (test.arraySize() != N) test.insertArray(random.nextInt(bound));
-//        test.sortLinkedList();
-//        test.sortArray();
-//        System.out.println("Generating " + N + " non-duplicate integer within 0-100");
-//        test.display();
+        L2Q1<Integer> test = new L2Q1<Integer>(20, 101);
+        test.start();
 
         //Q2
 //        int size = 5;
@@ -124,7 +118,12 @@ public class Main {
         /*
         LAB4
          */
-        Lab4 lab4 = new Lab4();
+        //Lab4 lab4 = new Lab4();
         //Tutorial1 tutorial1 = new Tutorial1();
+
+        /*
+        LAB 5
+         */
+        Lab5 lab5 = new Lab5();
     }
 }

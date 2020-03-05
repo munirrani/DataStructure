@@ -1,20 +1,45 @@
 package com.company;
 
+import java.awt.*;
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.Random;
 
-public class L2Q1<T extends  Comparable> {
+public class L2Q1<T extends Comparable> {
 
     private T[] arr;
     private LinkedList<T> linkedList;
     private int N;
     int index; // for array
+    int bound;
 
-    public L2Q1(int N) {
+    public L2Q1(int N, int bound) {
         index = -1;
         this.N = N;
+        this.bound = bound;
         linkedList = new LinkedList<>();
         arr = (T[]) new Comparable[N];
+    }
+
+    public void start() {
+        generate();
+        sortLinkedList();
+        sortArray();
+        System.out.println("Generating " + N + " non-duplicate integer within 0-100");
+        display();
+    }
+
+    public void generate() {
+        Random random = new Random();
+        Integer x;
+        while (linkedListSize() != N) {
+            x = random.nextInt(101);
+            insertLinkedList((T) x);
+        }
+        while (arraySize() != N) {
+            x = random.nextInt(101);
+            insertArray((T) x);
+        }
     }
 
     public void insertLinkedList(T t) {
