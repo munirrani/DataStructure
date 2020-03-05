@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Iterator;
+
 public class CircularLinkedList<T extends Comparable> {
 
     ListNode head;
@@ -70,5 +72,27 @@ public class CircularLinkedList<T extends Comparable> {
             count++;
         }
         return (T) currentNode.getData();
+    }
+
+    public CircularLinkedListIterator circularLinkedListIterator() {
+        return new CircularLinkedListIterator();
+    }
+
+    private class CircularLinkedListIterator<T> implements Iterator<T> {
+
+        private ListNode<T> currentNode = head;
+        private int count = -1;
+
+        @Override
+        public boolean hasNext() {
+            return currentNode.getLink() != head;
+        }
+
+        @Override
+        public T next() {
+            T data = (T) currentNode.getData();
+            currentNode = currentNode.getLink();
+            return data;
+        }
     }
 }
