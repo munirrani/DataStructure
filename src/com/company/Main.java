@@ -87,8 +87,8 @@ public class Main {
         LAB 2
          */
          //Q1
-        L2Q1<Integer> test = new L2Q1<Integer>(20, 101);
-        test.start();
+        //L2Q1<Integer> test = new L2Q1<Integer>(20, 101);
+        //test.start();
 
         //Q2
 //        int size = 5;
@@ -124,6 +124,6 @@ public class Main {
         /*
         LAB 5
          */
-        Lab5 lab5 = new Lab5();
+       Lab5 lab5 = new Lab5();
     }
 }
