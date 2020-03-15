@@ -1,10 +1,8 @@
 package com.company;
 
-import com.company.Lab5.Lab5;
+import com.company.Viva1.Viva1;
 
-import javax.naming.PartialResultException;
-import java.io.IOException;
-import java.util.Random;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -124,6 +122,31 @@ public class Main {
         /*
         LAB 5
          */
-       Lab5 lab5 = new Lab5();
+      // Lab5 lab5 = new Lab5();
+
+        CardGame cardGame = new CardGame(2);
+        cardGame.shuffle();
+        cardGame.drawCard(5);
+        cardGame.printPlayerCard();
+        cardGame.compareCard();
+        //writeBinary(4);
+        //Viva1 viva1 = new Viva1();
     }
+
+    public static void writeBinary(int n) {
+        if (n % 2 == 0) {
+            System.out.print(0);
+        } else if (n % 2 == 1){
+        }
+        writeBinary(n / 2);
+    }
+
+    public int sum(int a[], int n) {
+        if (n == 0) {
+            return a[0];
+        } else {
+            return a[n-1] + sum(a, n-1); // a[n-1] sebab index = 2
+        }
+    }
+
 }
