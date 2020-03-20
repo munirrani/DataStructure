@@ -4,10 +4,9 @@ import java.util.Random;
 
 public class Card<T extends Comparable<T>> implements Comparable<Card<T>> {
 
-    Pattern pattern;
+    private Pattern pattern;
     private T rank;
     private int p;
-
 
     public Card(T rank, int pattern) {
         this.rank = rank;
@@ -34,15 +33,8 @@ public class Card<T extends Comparable<T>> implements Comparable<Card<T>> {
         }
     }
 
-     enum Pattern {
+    enum Pattern {
         Diamond, Club, Heart, Spade;
-    }
-
-    public void setRandomPattern() {
-        var r = new Random();
-        int x = Math.abs(r.nextInt()) % 4 + 1;
-        Pattern[] values = Pattern.values();
-        pattern = values[x];
     }
 
     public Pattern getPattern() {

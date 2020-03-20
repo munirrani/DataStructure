@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.Lab5.Lab5;
 import com.company.Viva1.Viva1;
 
 import java.util.ArrayList;
@@ -122,15 +123,27 @@ public class Main {
         /*
         LAB 5
          */
-      // Lab5 lab5 = new Lab5();
+       Lab5 lab5 = new Lab5();
 
-        CardGame cardGame = new CardGame(2);
-        cardGame.shuffle();
-        cardGame.drawCard(5);
-        cardGame.printPlayerCard();
-        cardGame.compareCard();
+
+//        CardGame cardGame = new CardGame(4);
+//        cardGame.shuffle();
+//        cardGame.drawCard(5);
+//        cardGame.printPlayerCard();
+//        cardGame.compareCard();
         //writeBinary(4);
         //Viva1 viva1 = new Viva1();
+//        int[] set = { 1, 2, 3, 4, 5, 6, 9};
+//        int size = set.length;
+//        int powerSetSize = (int) Math.pow(2, size);
+//        for (int i = 0; i < powerSetSize; i++) {
+//            for (int j = 0; j < size; j++) {
+//                if ((i & (1 << j)) > 0) {
+//                    System.out.print(set[j]);
+//                }
+//            }
+//            System.out.println();
+//        }
     }
 
     public static void writeBinary(int n) {
@@ -149,4 +162,31 @@ public class Main {
         }
     }
 
+    private static void countCurrency(int amount) {
+        LinkedList<Integer> currencyNotes = new LinkedList<>();
+        LinkedList<Integer> numberOfNotes = new LinkedList<>();
+
+        currencyNotes.addNode(100);
+        currencyNotes.addNode(50);
+        currencyNotes.addNode(20);
+        currencyNotes.addNode(10);
+        currencyNotes.addNode(5);
+        currencyNotes.addNode(1);
+
+        for (int i = 0; i < currencyNotes.length(); i++) numberOfNotes.addNode(0); //set semua number of notes to 0 dulu
+
+        int remainder = amount;
+        for (int i = 0; i < currencyNotes.length(); i++) {
+            int note = currencyNotes.get(i);
+            if (remainder > note) {
+                numberOfNotes.set(i, remainder / note);
+                remainder = amount % note;
+            }
+        }
+
+        for (int i = 0; i < currencyNotes.length(); i++) {
+            System.out.println("MYR "+ currencyNotes.get(i) + " : " + numberOfNotes.get(i));
+        }
+
+    }
 }

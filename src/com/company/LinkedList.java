@@ -5,7 +5,6 @@ import java.util.Iterator;
 public class LinkedList<T extends Comparable<T>> {
 
     private ListNode head;
-    private int[] arr;
 
     public LinkedList() {
         head = null;
@@ -114,6 +113,19 @@ public class LinkedList<T extends Comparable<T>> {
         }
     }
 
+    public void addNumber() { //Tutorial Q2
+        ListNode<T> currentNode = head;
+        Double value;
+        while (currentNode != null) {
+            value = (Double) currentNode.getData();
+            if (value > 20) {
+                value += 10.5;
+                currentNode.setData((T) value);
+            }
+            currentNode = currentNode.getLink();
+        }
+    }
+
     public T get(int index) {
         if (index >= length() || index < 0 || head == null) {
             return  null;
@@ -125,6 +137,20 @@ public class LinkedList<T extends Comparable<T>> {
                 count++;
             }
             return (T) currentNode.getData();
+        }
+    }
+
+    public void set(int index, T data) {
+        if (index >= length() || index < 0 || head == null) {
+            return;
+        } else {
+            int count = 0;
+            ListNode currentNode = head;
+            while (currentNode.getLink() != null && count != index) {
+                currentNode = currentNode.getLink();
+                count++;
+            }
+            currentNode.setData(data);
         }
     }
 

@@ -1,5 +1,8 @@
 package com.company.Lab5;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Lab5 {
@@ -26,15 +29,18 @@ public class Lab5 {
 //        }
 //        newStack.showStack();
         //Q2
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter infix expression : ");
-        String infix = scanner.nextLine();
-        System.out.println("The infix expression is: " + toSymbol(infix));
-        infix = toSymbol(infix);
-        System.out.println("The postfix expression is: " + infixToPostfix(infix));
-        infix = infixToPostfix(infix);
-        countPrefixExpression(infix);
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Enter infix expression : ");
+//        String infix = scanner.nextLine();
+//        System.out.println("The infix expression is: " + toSymbol(infix));
+//        infix = toSymbol(infix);
+//        System.out.println("The postfix expression is: " + infixToPostfix(infix));
+//        infix = infixToPostfix(infix);
+//        countPrefixExpression(infix);
 
+        //Q3
+
+        NQueen nQueen = new NQueen();
     }
 
     private String toSymbol(String expression) {
@@ -144,4 +150,5 @@ public class Lab5 {
         if (c.contentEquals("(") || c.contentEquals(")")) return true;
         return false;
     }
+
 }
