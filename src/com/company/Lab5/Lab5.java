@@ -1,8 +1,8 @@
 package com.company.Lab5;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Lab5 {
@@ -39,8 +39,155 @@ public class Lab5 {
 //        countPrefixExpression(infix);
 
         //Q3
+        //NQueen nQueen = new NQueen();
 
-        NQueen nQueen = new NQueen();
+        //Q4
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Enter a expression : ");
+//        String input = scanner.nextLine();
+//        System.out.println(input);
+//        checkExpression(input);
+
+        //Q5
+//        try {
+//            Scanner scanner = new Scanner(new FileInputStream(new File("test-4.xml")));
+//            Stack<String> element = new Stack<>();
+//            String[] lines = new String[10];
+//            String line = "";
+//            String temp;
+//            System.out.println("Contents of XML file");
+//
+//            int count = 0;
+//            while (scanner.hasNextLine()) {
+//                lines[count] = scanner.nextLine();
+//                System.out.println(lines[count++]);
+//            }
+//            for (int i = 0; i < lines.length; i++) {
+//                line = lines[i];
+//                if (line == null) break;
+//                temp = line;
+//                while (true) {
+//                    if (!temp.contains("\\/")) {
+//                        temp = line.substring(line.indexOf("<") + 1, line.indexOf(">"));
+//                        element.push(temp);
+//                        element = checkXML(element);
+//                        line = line.replace("<" + temp + ">", "");
+//                    } else {
+//                        temp = line.substring(line.indexOf("</") + 1, line.indexOf(">"));
+//                        element.push(temp);
+//                        element = checkXML(element);
+//                        line = line.replace("</" + temp + ">", "");
+//                    }
+//                     if (element.isEmpty() || !line.contains("<")) break;
+//                }
+//                if (element.isEmpty()) break;
+//            }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
+    }
+
+    private Stack<String> checkXML(Stack<String> stack) {
+        String first, second;
+        if (stack.getSize() >= 2) { //check for duplicate entries
+            first = stack.pop();
+            second = stack.peek();
+            if (first.contentEquals(second)) {
+                System.out.println("Duplicate root element " + "<" + first + ">");
+                while (!stack.isEmpty()) stack.pop(); // terminate
+                return stack;
+            } else {
+                stack.push(first);
+            }
+        }
+        if (stack.peek().contains("/")) { //check if the closing </> is the same name
+            first = stack.pop();
+            second = stack.peek();
+            if (first.replace("/","").contentEquals(second)) {
+                stack.pop();
+            }
+            if (!first.replace("/","").contentEquals(second)) {
+                System.out.println("Begin element : " + "<" + second + ">" + " Invalid ending element : " +
+                        "<" + first + ">");
+                while (!stack.isEmpty()) stack.pop(); // terminate
+                return stack;
+            }
+        }
+        if (stack.isEmpty()) {
+            System.out.println("The xml document is valid");
+        }
+        return stack;
+    }
+
+    private void checkExpression(String expression) {
+        Stack<Character> symbol = new Stack<>();
+        char c, first, second, third;
+        for (int i = 0; i < expression.length(); i++) {
+            c = expression.charAt(i);
+            if (c == '\\') {
+                i++;
+                continue;
+            }
+
+            if (isOpenBracket(c)) {
+                symbol.push(c);
+            } else if (isCloseBracket(c)) {
+                if (!symbol.isEmpty()) {
+                    first = symbol.peek();
+                    if (getPair(first) == c) {
+                        symbol.pop();
+                    } else if (getPair(first) != c) {
+                        for (int a = 0; a < i; a++) System.out.print(" ");
+                        System.out.print("^ Missing " + getPair(first));
+                        System.out.println();
+                        break;
+                    }
+                } else { //Stack is empty but suddenly found a close bracket
+                    for (int a = 0; a < i; a++) System.out.print(" ");
+                    System.out.print("^ Extra " + c);
+                    System.out.println();
+                    break;
+                }
+            }
+
+            if (c == ';' && !symbol.isEmpty() && isOpenBracket(symbol.peek())) {
+                for (int a = 0; a < i; a++) System.out.print(" ");
+                System.out.print("^ Missing " + getPair(symbol.peek()));
+                System.out.println();
+                break;
+            }
+        }
+
+        if (symbol.getSize() == 0) {
+            System.out.println("The expression is balanced, as all things should be");
+        }
+    }
+
+    private boolean isOpenBracket(char c) {
+        if (c == '(' || c == '{' || c == '[') return true;
+        return false;
+    }
+
+    private boolean isCloseBracket(char c) {
+        if (c == ')' || c == '}' || c == ']') return true;
+        return false;
+    }
+
+    private char getPair(char c) {
+        if (c == '(') {
+            return ')';
+        } else if (c == ')') {
+            return '(';
+        } else if (c == '[') {
+            return ']';
+        } else if (c == ']') {
+            return '[';
+        } else if (c == '{') {
+            return '}';
+        } else if (c == '}') {
+            return '{';
+        }
+        return 0;
     }
 
     private String toSymbol(String expression) {
