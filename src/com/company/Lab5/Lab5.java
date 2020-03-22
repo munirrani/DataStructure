@@ -85,6 +85,8 @@ public class Lab5 {
 //        } catch (FileNotFoundException e) {
 //            e.printStackTrace();
 //        }
+
+        Maze maze = new Maze();
     }
 
     private Stack<String> checkXML(Stack<String> stack) {

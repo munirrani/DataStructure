@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.Lab5.Lab5;
+import com.company.Lab5.Maze;
 import com.company.Viva1.Viva1;
 
 import java.util.ArrayList;
