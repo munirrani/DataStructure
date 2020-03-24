@@ -11,7 +11,8 @@ public class Lab6 {
     public Lab6() {
         //Q1();
         //Q2();
-        Q3();
+        //Q3();
+        Q4();
     }
 
     private void Q1() {
@@ -100,5 +101,49 @@ public class Lab6 {
 
     private void Q3() {
         ColourCard colourCard = new ColourCard();
+    }
+
+    private void Q4() {
+        try {
+            Scanner scanner = new Scanner(new FileInputStream(new File("lab6Q4.txt")));
+            Queue<Integer> shareQueue = new Queue<>();
+            Queue<Integer> sharePriceQueue = new Queue<>();
+
+            String[] values;
+            int sellPrice = 0;
+            int shareSell = 0;
+            System.out.println("List of Transcations");
+            while (scanner.hasNextLine()) {
+                values = scanner.nextLine().split(" ");
+                System.out.print("Day " + values[0] + " : ");
+                if (values[1].contentEquals("B")) {
+                    System.out.print("Buy ");
+                    shareQueue.enqeue(Integer.valueOf(values[2]));
+                    sharePriceQueue.enqeue(Integer.valueOf(values[3]));
+                } else {
+                    System.out.print("Sell ");
+                    shareSell = Integer.valueOf(values[2]);
+                    sellPrice = Integer.valueOf(values[3]);
+                }
+                System.out.print(values[2] + " shares at RM " + values[3]);
+                System.out.println();
+            }
+
+            int gain = 0; // No pain, no gain
+            int share, price;
+            while (!shareQueue.isEmpty()) {
+                share = shareQueue.dequeue();
+                price = sharePriceQueue.dequeue();
+                if (shareSell > share) {
+                    shareSell -= share;
+                    gain += (share * (sellPrice - price));
+                } else {
+                    gain += (shareSell * (sellPrice - price));
+                }
+            }
+            System.out.println("Total Gain " + gain);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
