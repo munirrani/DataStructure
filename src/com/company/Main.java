@@ -1,7 +1,7 @@
 package com.company;
 
 import com.company.Lab5.Lab5;
-import com.company.Lab5.Maze;
+import com.company.Lab6.Lab6;
 import com.company.Viva1.Viva1;
 
 import java.util.ArrayList;
@@ -124,7 +124,12 @@ public class Main {
         /*
         LAB 5
          */
-       Lab5 lab5 = new Lab5();
+       //Lab5 lab5 = new Lab5();
+
+        /*
+        LAB 6
+         */
+        Lab6 lab6 = new Lab6();
 
 
 //        CardGame cardGame = new CardGame(4);
@@ -145,6 +150,8 @@ public class Main {
 //            }
 //            System.out.println();
 //        }
+
+
     }
 
     public static void writeBinary(int n) {
