@@ -10,7 +10,8 @@ public class Lab7 {
 
     public Lab7() {
         //Q1();
-        Q2();
+        //Q2();
+        Q3();
     }
 
     private void Q1() {
@@ -78,5 +79,13 @@ public class Lab7 {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
+    }
+
+    private void Q3() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Infix Expression : ");
+        String input = scanner.nextLine();
+        BSTExpression bstExpression = new BSTExpression(input);
     }
 }
