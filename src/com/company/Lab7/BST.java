@@ -194,12 +194,12 @@ public class BST<T extends Comparable<T>> {
         return total;
     }
 
-    public Integer getOccurence(Integer value) {
+    public Integer getOccurence(T value) {
         return getOccurence(root, value, 0);
     }
 
-    private Integer getOccurence(BSTNode<T> a, Integer value, Integer currentCount) {
-        if (value.compareTo((Integer)a.getData()) == 0) {
+    private Integer getOccurence(BSTNode<T> a, T value, Integer currentCount) {
+        if (value.compareTo(a.getData()) == 0) {
             ++currentCount;
         }
         if (a.getRightLink() != null) {
@@ -210,4 +210,17 @@ public class BST<T extends Comparable<T>> {
         }
         return currentCount;
     }
+
+    public void printInOrder(BST<T> bst) {
+        printInOrder(root, bst);
+    }
+
+    private void printInOrder(BSTNode<T> a, BST<T> bst) {
+        if (a != null) {
+            printInOrder(a.getLeftLink(), bst);
+            System.out.println(String.format("%04d", bst.getOccurence(a.getData())) + " " + a.getData() + " --> ");
+            printInOrder(a.getRightLink(), bst);
+        }
+    }
+
 }
