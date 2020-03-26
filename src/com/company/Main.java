@@ -3,6 +3,7 @@ package com.company;
 import com.company.Lab5.Lab5;
 import com.company.Lab6.Lab6;
 import com.company.Lab7.Lab7;
+import com.company.Lab8.Lab8;
 import com.company.Viva1.Viva1;
 
 import java.util.ArrayList;
@@ -135,7 +136,12 @@ public class Main {
         /*
         Lab 7
          */
-        Lab7 lab7 = new Lab7();
+        //Lab7 lab7 = new Lab7();
+
+        /*
+        LAB 8
+         */
+        Lab8 lab8 = new Lab8();
 
 
 //        CardGame cardGame = new CardGame(4);
