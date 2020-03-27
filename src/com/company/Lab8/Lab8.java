@@ -12,7 +12,8 @@ public class Lab8 {
     public Lab8() {
         //Q1();
         //Q2();
-        Q3();
+        //Q3();
+        Q4();
     }
 
     private void Q1() {
@@ -60,5 +61,27 @@ public class Lab8 {
 
     private void Q3() {
         SortTest sortTest = new SortTest();
+    }
+
+    private void Q4() {
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter N characters : ");
+        int characterNumber = scanner.nextInt();
+
+        ArrayList<Character> characterArrayList = new ArrayList<>();
+        System.out.print("The characters are : ");
+        char c;
+        for (int i = 0; i < characterNumber; i++) {
+            c = (char)(random.nextInt(90 - 65 + 1) + 65); // ASCII A -> Z
+            characterArrayList.add(c);
+            System.out.print(c + " ");
+        }
+        System.out.println();
+
+        Sort<Character> characterSort = new Sort(characterArrayList.toArray(new Character[characterArrayList.size()]));
+        characterSort.heapSort();
+        System.out.println("Heap Sort - Ascending Order");
+        characterSort.printArray();
     }
 }

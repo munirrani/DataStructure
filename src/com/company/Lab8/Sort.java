@@ -166,4 +166,35 @@ public class Sort<T extends Comparable<T>> {
         swapByIndex(pIndex, last);
         return pIndex;
     }
+
+    public void heapSort() {
+        int n = arr.length;
+
+        // Build max heap
+        for (int i = (n - 1) / 2; i >= 0; i--) {
+            heapify(n, i);
+        }
+
+        for (int i = n - 1; i >= 0; i--) {
+            swapByIndex(i, 0);
+            heapify(i, 0);
+        }
+    }
+
+    private void heapify(int n, int i) {
+        int largest = i;
+        int left = 2*i + 1;
+        int right = 2*i + 2;
+
+        if (left < n && arr[left].compareTo(arr[largest]) > 0) {
+            largest = left;
+        }
+        if (right < n && arr[right].compareTo(arr[largest]) > 0) {
+            largest = right;
+        }
+        if (largest != i) {
+            swapByIndex(largest, i);
+            heapify(n, largest);
+        }
+    }
 }

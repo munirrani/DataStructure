@@ -16,9 +16,10 @@ public class SortTest {
         sortingNames.add("Insertion Sort");
         sortingNames.add("Merge Sort");
         sortingNames.add("Quick Sort");
+        sortingNames.add("Heap Sort");
 
         ArrayList<Integer> timeTaken = new ArrayList<>();
-        for(int i = 0; i < 5; i++) timeTaken.add(0);
+        for(int i = 0; i < 6; i++) timeTaken.add(0);
 
         long before, after;
         int time;
@@ -56,6 +57,12 @@ public class SortTest {
             new Sort<>(numbers).quickSort();
             after = System.currentTimeMillis();
             timeTaken.set(4, time + (int)(after-before));
+
+            time = timeTaken.get(5);
+            before = System.currentTimeMillis();
+            new Sort<>(numbers).heapSort();
+            after = System.currentTimeMillis();
+            timeTaken.set(5, time + (int)(after-before));
         }
 
         for (int i = 0; i < timeTaken.size(); i++) {
@@ -67,7 +74,7 @@ public class SortTest {
             }
         }
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             System.out.println(sortingNames.get(i) + " : " + timeTaken.get(i));
         }
         System.out.println("The fastest sorting algo is " + sortingNames.get(0));
