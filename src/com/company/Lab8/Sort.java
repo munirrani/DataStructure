@@ -197,4 +197,20 @@ public class Sort<T extends Comparable<T>> {
             heapify(n, largest);
         }
     }
+
+    public void sort(int index) {
+        if (index == 0) {
+            selectionSort();
+        } else if (index == 1) {
+            bubbleSort();
+        } else if (index == 2) {
+            insertionSort();
+        } else if (index == 3) {
+            mergeSort();
+        } else if (index == 4) {
+            quickSort();
+        } else if (index == 5) {
+            heapSort();
+        }
+    }
 }
