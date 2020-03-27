@@ -11,7 +11,8 @@ public class Lab8 {
 
     public Lab8() {
         //Q1();
-        Q2();
+        //Q2();
+        Q3();
     }
 
     private void Q1() {
@@ -55,5 +56,9 @@ public class Lab8 {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    private void Q3() {
+        SortTest sortTest = new SortTest();
     }
 }

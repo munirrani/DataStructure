@@ -28,6 +28,18 @@ public class Sort<T extends Comparable<T>> {
         }
     }
 
+    public void bubbleSort() {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[i].compareTo(arr[j]) < 0) {
+                    T temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+    }
+
     public void insertionSort() {
         int j;
         for (int i = 1; i < arr.length; i++) {
