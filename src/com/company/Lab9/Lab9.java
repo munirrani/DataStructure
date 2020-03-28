@@ -18,7 +18,8 @@ public class Lab9 {
         //Q1();
         //Q2();
         //Q3();
-        Q4();
+        //Q4();
+        Q5();
     }
 
     private void Q1() {
@@ -108,7 +109,6 @@ public class Lab9 {
         try {
             Scanner scan = new Scanner(new FileInputStream(new File("lab9Q4.txt")));
             String line;
-            System.out.println("The data set from the File");
             while (scan.hasNextLine()) {
                 line = scan.nextLine();
                 products.put(Integer.valueOf(line.substring(0, 5)), line.substring(6));
@@ -116,6 +116,7 @@ public class Lab9 {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        System.out.println("The data set from the File");
         products.showHashTable();
         System.out.println("The Hash Table size is " + products.getSize());
         System.out.print("Enter a PID to search : ");
@@ -123,6 +124,32 @@ public class Lab9 {
         if (products.containsKey(Integer.valueOf(input))) {
             System.out.println("Product ID : " + input + " " + products.get(Integer.valueOf(input)));
             System.out.println("Location : " + products.getLocation(Integer.valueOf(input)));
+        } else {
+            System.out.println("Product ID " + input + " cannot be found");
+        }
+    }
+
+    private void Q5() {
+        ArrayHashTableChain<Integer, String> products = new ArrayHashTableChain<>();
+        try {
+            Scanner scan = new Scanner(new FileInputStream(new File("lab9Q4.txt")));
+            String line;
+            while (scan.hasNextLine()) {
+                line = scan.nextLine();
+                products.put(Integer.valueOf(line.substring(0, 5)), line.substring(6));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        System.out.println("The data set from the File");
+        products.showHashTable();
+        System.out.println("The Hash Table size is " + products.getSize());
+        System.out.print("Enter a PID to search : ");
+        String input = scanner.nextLine();
+        if (products.containsKey(Integer.valueOf(input))) {
+            System.out.println("Product ID : " + input + " " + products.get(Integer.valueOf(input)));
+            System.out.println("The elements in the same location are : ");
+            products.printLocation(Integer.valueOf(input));
         } else {
             System.out.println("Product ID " + input + " cannot be found");
         }
