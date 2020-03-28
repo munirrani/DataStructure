@@ -4,6 +4,7 @@ import com.company.Lab5.Lab5;
 import com.company.Lab6.Lab6;
 import com.company.Lab7.Lab7;
 import com.company.Lab8.Lab8;
+import com.company.Lab9.Lab9;
 import com.company.Viva1.Viva1;
 
 import java.util.ArrayList;
@@ -141,7 +142,12 @@ public class Main {
         /*
         LAB 8
          */
-        Lab8 lab8 = new Lab8();
+        //Lab8 lab8 = new Lab8();
+
+        /*
+        LAB 9
+         */
+        Lab9 lab9 = new Lab9();
 
 
 //        CardGame cardGame = new CardGame(4);
