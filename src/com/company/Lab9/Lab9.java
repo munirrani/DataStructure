@@ -13,7 +13,8 @@ public class Lab9 {
 
     public Lab9 () {
         //Q1();
-        Q2();
+        //Q2();
+        Q3();
     }
 
     private void Q1() {
@@ -66,5 +67,35 @@ public class Lab9 {
         } else {
             System.out.println("No integer can be found in between " + firstNumber + " and " + secondNumber);
         }
+    }
+
+    private void Q3() {
+        ArrayHashTable<String, String> arrayHashTable = new ArrayHashTable<>();
+        arrayHashTable.put("100-101", "ICND1");
+        arrayHashTable.put("200-101", "ICND2");
+        arrayHashTable.put("200-120", "CCNA Routing and Switching");
+        arrayHashTable.put("210-260", "CCNA Security");
+
+        System.out.println("The number of course is " + arrayHashTable.getSize());
+        arrayHashTable.showHashTable();
+
+        System.out.println("Adding a new course");
+        arrayHashTable.put("300-101", "ROUTE");
+        System.out.println("The number of course is " + arrayHashTable.getSize());
+        arrayHashTable.showHashTable();
+
+        System.out.println("Modifying 210-260");
+        arrayHashTable.put("210-260", "CCNA RS Security");
+        System.out.println("The number of course is " + arrayHashTable.getSize());
+        arrayHashTable.showHashTable();
+
+        System.out.println("Remove the course 200-101");
+        arrayHashTable.remove("200-101");
+        System.out.println("The number of course is " + arrayHashTable.getSize());
+        arrayHashTable.showHashTable();
+
+        System.out.print("Enter a code to search : ");
+        String input = scanner.nextLine();
+        System.out.println("Course " + input + " : " + arrayHashTable.get(input));
     }
 }
