@@ -60,7 +60,16 @@ public class Lab8 {
     }
 
     private void Q3() {
+        Random random = new Random();
+        System.out.println("Performance Comparison of Sorting Algorithms");
+        System.out.println("Running on 1000 sets of 100000 random numbers");
         SortTest sortTest = new SortTest();
+        Integer[] numbers = new Integer[100000];
+        for (int i = 0; i < 1000; i++) {
+            for (int j = 0; j < 100000; j++) numbers[j] = random.nextInt();
+            sortTest.test(numbers);
+        }
+        sortTest.displayResult();
     }
 
     private void Q4() {
