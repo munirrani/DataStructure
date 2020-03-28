@@ -3,6 +3,9 @@ package com.company.Lab9;
 import com.company.Lab8.SortTest;
 import com.company.LinkedList;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -14,7 +17,8 @@ public class Lab9 {
     public Lab9 () {
         //Q1();
         //Q2();
-        Q3();
+        //Q3();
+        Q4();
     }
 
     private void Q1() {
@@ -97,5 +101,30 @@ public class Lab9 {
         System.out.print("Enter a code to search : ");
         String input = scanner.nextLine();
         System.out.println("Course " + input + " : " + arrayHashTable.get(input));
+    }
+
+    private void Q4() {
+        ArrayHashTableHashing<Integer, String> products = new ArrayHashTableHashing<>();
+        try {
+            Scanner scan = new Scanner(new FileInputStream(new File("lab9Q4.txt")));
+            String line;
+            System.out.println("The data set from the File");
+            while (scan.hasNextLine()) {
+                line = scan.nextLine();
+                products.put(Integer.valueOf(line.substring(0, 5)), line.substring(6));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        products.showHashTable();
+        System.out.println("The Hash Table size is " + products.getSize());
+        System.out.print("Enter a PID to search : ");
+        String input = scanner.nextLine();
+        if (products.containsKey(Integer.valueOf(input))) {
+            System.out.println("Product ID : " + input + " " + products.get(Integer.valueOf(input)));
+            System.out.println("Location : " + products.getLocation(Integer.valueOf(input)));
+        } else {
+            System.out.println("Product ID " + input + " cannot be found");
+        }
     }
 }
