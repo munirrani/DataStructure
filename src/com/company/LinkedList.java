@@ -332,6 +332,39 @@ public class LinkedList<T extends Comparable<T>> {
         return false;
     }
 
+    public int getOccurence(T t) {
+        ListNode currentNode = head;
+        int count = 0;
+        while (currentNode != null) {
+            if (t.compareTo((T) currentNode.getData()) == 0) count++;
+            currentNode = currentNode.getLink();
+        }
+        return count;
+    }
+
+    public boolean containsFromRange(T a, T b) {
+        ListNode currentNode = head;
+        T data;
+        while (currentNode != null) {
+            data = (T) currentNode.getData();
+            if ((a.compareTo(data) == 0 || a.compareTo(data) > 0) && (b.compareTo(data) == 0 || b.compareTo(data) < 0)) return true;
+            currentNode = currentNode.getLink();
+        }
+        return false;
+    }
+
+    public int getOccurenceFromRange(T a, T b) {
+        ListNode currentNode = head;
+        int count = 0;
+        T data;
+        while (currentNode != null) {
+            data = (T) currentNode.getData();
+            if ((a.compareTo(data) == 0 || a.compareTo(data) > 0) && (b.compareTo(data) == 0 || b.compareTo(data) < 0)) count++;
+            currentNode = currentNode.getLink();
+        }
+        return count;
+    }
+
     public LinkedListIterator listIterator() {
         return new LinkedListIterator();
     }
