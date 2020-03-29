@@ -6,7 +6,7 @@ public class Stack<T extends Comparable> {
 
     private ListNode top;
 
-    Stack() {
+    public Stack() {
         top = null;
     }
 

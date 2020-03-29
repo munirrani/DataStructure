@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.Lab10.Lab10;
 import com.company.Lab5.Lab5;
 import com.company.Lab6.Lab6;
 import com.company.Lab7.Lab7;
@@ -147,7 +148,12 @@ public class Main {
         /*
         LAB 9
          */
-        Lab9 lab9 = new Lab9();
+        //Lab9 lab9 = new Lab9();
+
+        /*
+        LAB 10
+         */
+        Lab10 lab10 = new Lab10();
 
 
 //        CardGame cardGame = new CardGame(4);
