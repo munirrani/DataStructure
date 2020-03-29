@@ -246,4 +246,32 @@ public class Graph<V extends Comparable<V>, E> {
         while (!pathStack.isEmpty()) System.out.print(pathStack.pop().toString() + " --> ");
         System.out.println();
     }
+
+    public void findPathBFS(V from, V to) {
+        System.out.println("The shortest path from " + from.toString() + " to " + to.toString() + " by distance");
+        ArrayList<V> adjascent;
+        Queue<V> nodeQueue = new Queue<>();
+        Queue<String> pathToNodeQueue = new Queue<>(); // A queue show the paths from start to finish of that node
+        boolean found = false;
+        nodeQueue.enqeue(from);
+        pathToNodeQueue.enqeue(from.toString());
+        while (!found) {
+            V top = nodeQueue.dequeue();
+            String topPath = pathToNodeQueue.dequeue();
+            adjascent = getAdjascent(top);
+            if (adjascent.size() != 0) {
+                for (int i = 0; i < adjascent.size(); i++) {
+                    nodeQueue.enqeue(adjascent.get(i));
+                    String str = topPath + " -> " + adjascent.get(i).toString(); // Store the node before
+                    pathToNodeQueue.enqeue(str);
+                    if (to.compareTo(adjascent.get(i)) == 0) {
+                        found = true;
+                        while (pathToNodeQueue.getSize() != 1) pathToNodeQueue.dequeue();
+                        System.out.println(pathToNodeQueue.dequeue() + " -> ");
+                        break;
+                    }
+                }
+            }
+        }
+    }
 }
