@@ -4,6 +4,7 @@ import com.company.Lab5.Stack;
 import com.company.Lab6.Queue;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Graph<V extends Comparable<V>, E> {
     private GraphNode head;
@@ -273,5 +274,20 @@ public class Graph<V extends Comparable<V>, E> {
                 }
             }
         }
+    }
+
+    public HashMap<V, E> getHashMap(V exclude) {
+        HashMap<V,E> hashMap = new HashMap<>();
+        Double val = 0.0;
+        hashMap.put(exclude, (E)val);
+        GraphNode currentNode = head;
+        while (currentNode != null) {
+            if (exclude.compareTo((V)currentNode.getVertice()) != 0) {
+                Integer num = Integer.MAX_VALUE;
+                hashMap.put((V)currentNode.getVertice(), (E)num);
+            }
+            currentNode = currentNode.getVerticeLink();
+        }
+        return hashMap;
     }
 }

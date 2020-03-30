@@ -107,6 +107,37 @@ public class PriorityQueue<T extends Comparable<T>> {
         return priority;
     }
 
+    public void minQueue(T data) {
+        if (head == null) {
+            head = new ListNode(data, null);
+        } else if (data.compareTo((head.getData())) < 0) {
+            head = new ListNode<>(data, head);
+        } else if(data.compareTo(head.getData()) == 0) {
+            head.setData(data);
+        } else {
+            ListNode currentNode = head;
+            while (true) {
+                if(currentNode.getLink() != null) {
+                    if (data.compareTo((T)currentNode.getLink().getData()) < 0) {
+                        ListNode newNode = new ListNode(data, currentNode.getLink());
+                        currentNode.setLink(newNode);
+                        break;
+                    } else if(data.compareTo((T)currentNode.getLink().getData()) == 0) {
+                        currentNode.getLink().setData(data);
+                        break;
+                    } else { // move to the next node
+                        currentNode = currentNode.getLink();
+                    }
+                } else { // add to the last element
+                    ListNode newNode;
+                    newNode = new ListNode(data, null);
+                    currentNode.setLink(newNode);
+                    break;
+                }
+            }
+        }
+    }
+
     public T deqeue() {
         if (head == null) {
             return null;
