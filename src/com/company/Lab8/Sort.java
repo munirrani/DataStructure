@@ -1,5 +1,7 @@
 package com.company.Lab8;
 
+import java.lang.reflect.Array;
+
 public class Sort<T extends Comparable<T>> {
 
     T[] arr;
@@ -212,5 +214,13 @@ public class Sort<T extends Comparable<T>> {
         } else if (index == 5) {
             heapSort();
         }
+    }
+
+    public T[] toArray(Class<T> clazz) {
+        T[] array = (T[]) Array.newInstance(clazz, arr.length);
+        for (int i = 0; i < arr.length; i++) {
+            array[i] = (T) arr[i];
+        }
+        return array;
     }
 }
