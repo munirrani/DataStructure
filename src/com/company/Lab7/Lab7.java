@@ -9,8 +9,8 @@ import java.util.Scanner;
 public class Lab7 {
 
     public Lab7() {
-        //Q1();
-        //Q2();
+        Q1();
+        Q2();
         Q3();
     }
 

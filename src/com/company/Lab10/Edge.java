@@ -1,6 +1,7 @@
 package com.company.Lab10;
 
 public class Edge<E> {
+
     private GraphNode verticeLink;
     private Edge edgeLink;
     private E weight;

@@ -62,6 +62,4 @@ public class ColourCard {
         System.out.println("Player 2 Card");
         secondPlayer.showQueue();
     }
-
-
 }

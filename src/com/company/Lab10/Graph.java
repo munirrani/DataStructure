@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Graph<V extends Comparable<V>, E> {
+
     private GraphNode head;
 
     public Graph() {

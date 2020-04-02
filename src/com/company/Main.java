@@ -1,235 +1,49 @@
 package com.company;
 
-import com.company.Lab10.Lab10;
+import com.company.Lab1.Lab1;
+import com.company.Lab2.Lab2;
+import com.company.Lab3.Lab3;
+import com.company.Lab4.Lab4;
 import com.company.Lab5.Lab5;
 import com.company.Lab6.Lab6;
 import com.company.Lab7.Lab7;
 import com.company.Lab8.Lab8;
 import com.company.Lab9.Lab9;
-import com.company.Tutorial10.Tutorial10;
+import com.company.Lab10.Lab10;
+import com.company.Tutorial1.Tutorial1;
+import com.company.Tutorial2.Tutorial2;
+import com.company.Tutorial3.Tutorial3;
+import com.company.Tutorial4.Tutorial4;
+import com.company.Tutorial5.Tutorial5;
+import com.company.Tutorial6.Tutorial6;
+import com.company.Tutorial7.Tutorial7;
+import com.company.Tutorial8.Tutorial8;
 import com.company.Tutorial9.Tutorial9;
-import com.company.Viva1.Viva1;
-
-import java.util.ArrayList;
+import com.company.Tutorial10.Tutorial10;
 
 public class Main {
 
     public static void main(String[] args) {
-        /*
-        LAB 1
-         */
-        // Q1
-        //Time time = new Time(17, 59);
+        Lab1 lab1 = new Lab1();
+        Lab2 lab2 = new Lab2();
+        Lab3 lab3 = new Lab3();
+        Lab4 lab4 = new Lab4();
+        Lab5 lab5 = new Lab5();
+        Lab6 lab6 = new Lab6();
+        Lab7 lab7 = new Lab7();
+        Lab8 lab8 = new Lab8();
+        Lab9 lab9 = new Lab9();
+        Lab10 lab10 = new Lab10();
 
-        //Q2
-        //Polynomial polynomial = new Polynomial(3, 2, 4, 2 , -0.5, -20);
-
-        //Q3
-        //SimpleNetwork simpleNetwork = new SimpleNetwork();
-
-        //Q4
-//        CharacterAtoG letterF = new CharacterAtoG('F');
-//        CharacterOtoT letterS = new CharacterOtoT('S');
-//        CharacterHtoN letterK = new CharacterHtoN('K');
-//        CharacterOtoT letterT = new CharacterOtoT('T');
-//        CharacterHtoN letterM = new CharacterHtoN('M');
-//
-//        for (int i = 0; i < 5; i++) {
-//            System.out.print(letterF.getLineAt(i));
-//            System.out.print("  ");
-//            System.out.print(letterS.getLineAt(i));
-//            System.out.print("  ");
-//            System.out.print(letterK.getLineAt(i));
-//            System.out.print("  ");
-//            System.out.print(letterT.getLineAt(i));
-//            System.out.print("  ");
-//            System.out.print(letterM.getLineAt(i));
-//            System.out.println();
-//        }
-
-
-        //Q5
-//        String textFileName = "lab1.txt";
-//        String binaryFileName = "lab1.dat";
-//        TextFile textFile = new TextFile();
-//        BinaryFile binaryFile = new BinaryFile();
-//        try {
-//            System.out.println("Write to text file");
-//
-//            String line1 = "Welcome to FSKTM!";
-//            System.out.println(line1);
-//            textFile.write(textFileName, line1);
-//
-//            String line2 = "Please register your matric number.";
-//            System.out.println(line2);
-//            textFile.write(textFileName, line2);
-//
-//            String line3 = "Please register your UMMail account.";
-//            System.out.println(line3);
-//            textFile.write(textFileName, line3);
-//
-//            System.out.println("Read from text file");
-//            textFile.read(textFileName);
-//
-//            System.out.println("Write to binary file");
-//
-//            System.out.println(line1);
-//            binaryFile.write(binaryFileName, line1);
-//
-//            System.out.println(line2);
-//            binaryFile.write(binaryFileName, line2);
-//
-//            System.out.println(line3);
-//            binaryFile.write(binaryFileName, line3);
-//
-//            System.out.println("Read from binary file");
-//            binaryFile.read(binaryFileName);
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-        /*
-        LAB 2
-         */
-         //Q1
-        //L2Q1<Integer> test = new L2Q1<Integer>(20, 101);
-        //test.start();
-
-        //Q2
-//        int size = 5;
-//        System.out.println("Create a text file with maximum record equal to " + size);
-//        TextFileLog<String> textFileLog = new TextFileLog<>(size);
-//        textFileLog.insert("James");
-//        textFileLog.insert("Ahmad");
-//        textFileLog.insert("Siti");
-//        textFileLog.insert("Ramesh");
-//        textFileLog.insert("John");
-//
-//        System.out.println();
-//        System.out.println("Adding another record");
-//        textFileLog.insert("Fairuz");
-//        textFileLog.search("Siti");
-//        textFileLog.clear();
-//        System.out.println("The Text File Log Size " + textFileLog.size());
-
-        //Q3
-       // UNOArrayImplementation<String> game = new UNOArrayImplementation<String>("Player 1");
-
-        /*
-         LAB3
-         */
-        //Lab3 lab3 = new Lab3();
-
-        /*
-        LAB4
-         */
-        //Lab4 lab4 = new Lab4();
-        //Tutorial1 tutorial1 = new Tutorial1();
-
-        /*
-        LAB 5
-         */
-       //Lab5 lab5 = new Lab5();
-
-        /*
-        LAB 6
-         */
-        //Lab6 lab6 = new Lab6();
-
-        /*
-        Lab 7
-         */
-        //Lab7 lab7 = new Lab7();
-
-        /*
-        LAB 8
-         */
-        //Lab8 lab8 = new Lab8();
-
-        /*
-        LAB 9
-         */
-        //Lab9 lab9 = new Lab9();
-
-        /*
-        LAB 10
-         */
-        //Lab10 lab10 = new Lab10();
-
-        /*
-        TUTORIAL 9
-         */
+        Tutorial1 tutorial1 = new Tutorial1();
+        Tutorial2 tutorial2 = new Tutorial2();
+        Tutorial3 tutorial3 = new Tutorial3();
+        Tutorial4 tutorial4 = new Tutorial4();
+        Tutorial5 tutorial5 = new Tutorial5();
+        Tutorial6 tutorial6 = new Tutorial6();
+        Tutorial7 tutorial7 = new Tutorial7();
+        Tutorial8 tutorial8 = new Tutorial8();
         Tutorial9 tutorial9 = new Tutorial9();
-
-        /*
-        TUTORIAL 10
-         */
-        //Tutorial10 tutorial10 = new Tutorial10();
-
-//        CardGame cardGame = new CardGame(4);
-//        cardGame.shuffle();
-//        cardGame.drawCard(5);
-//        cardGame.printPlayerCard();
-//        cardGame.compareCard();
-        //writeBinary(4);
-        //Viva1 viva1 = new Viva1();
-//        int[] set = { 1, 2, 3, 4, 5, 6, 9};
-//        int size = set.length;
-//        int powerSetSize = (int) Math.pow(2, size);
-//        for (int i = 0; i < powerSetSize; i++) {
-//            for (int j = 0; j < size; j++) {
-//                if ((i & (1 << j)) > 0) {
-//                    System.out.print(set[j]);
-//                }
-//            }
-//            System.out.println();
-//        }
-
-
-    }
-
-    public static void writeBinary(int n) {
-        if (n % 2 == 0) {
-            System.out.print(0);
-        } else if (n % 2 == 1){
-        }
-        writeBinary(n / 2);
-    }
-
-    public int sum(int a[], int n) {
-        if (n == 0) {
-            return a[0];
-        } else {
-            return a[n-1] + sum(a, n-1); // a[n-1] sebab index = 2
-        }
-    }
-
-    private static void countCurrency(int amount) {
-        LinkedList<Integer> currencyNotes = new LinkedList<>();
-        LinkedList<Integer> numberOfNotes = new LinkedList<>();
-
-        currencyNotes.addNode(100);
-        currencyNotes.addNode(50);
-        currencyNotes.addNode(20);
-        currencyNotes.addNode(10);
-        currencyNotes.addNode(5);
-        currencyNotes.addNode(1);
-
-        for (int i = 0; i < currencyNotes.length(); i++) numberOfNotes.addNode(0); //set semua number of notes to 0 dulu
-
-        int remainder = amount;
-        for (int i = 0; i < currencyNotes.length(); i++) {
-            int note = currencyNotes.get(i);
-            if (remainder > note) {
-                numberOfNotes.set(i, remainder / note);
-                remainder = amount % note;
-            }
-        }
-
-        for (int i = 0; i < currencyNotes.length(); i++) {
-            System.out.println("MYR "+ currencyNotes.get(i) + " : " + numberOfNotes.get(i));
-        }
-
+        Tutorial10 tutorial10 = new Tutorial10();
     }
 }

@@ -47,7 +47,6 @@ public class Card implements Comparable<Card> {
         return number - o.getNumber();
     }
 
-    // TODO Print Card Number
     public String toString() {
         int rankNumber = (Integer) number;
         String str = "";

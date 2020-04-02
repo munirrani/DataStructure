@@ -10,10 +10,10 @@ import java.util.Scanner;
 public class Lab6 {
 
     public Lab6() {
-        //Q1();
-        //Q2();
-        //Q3();
-        //Q4();
+        Q1();
+        Q2();
+        Q3();
+        Q4();
         Q5();
     }
 

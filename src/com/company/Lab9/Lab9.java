@@ -1,7 +1,7 @@
 package com.company.Lab9;
 
+import com.company.Lab4.LinkedList;
 import com.company.Lab8.SortTest;
-import com.company.LinkedList;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,10 +15,10 @@ public class Lab9 {
     Scanner scanner = new Scanner(System.in);
 
     public Lab9 () {
-        //Q1();
-        //Q2();
-        //Q3();
-        //Q4();
+        Q1();
+        Q2();
+        Q3();
+        Q4();
         Q5();
     }
 

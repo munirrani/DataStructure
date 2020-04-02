@@ -1,7 +1,5 @@
 package com.company.Lab5;
 
-import com.sun.security.jgss.GSSUtil;
-
 public class Stack<T extends Comparable> {
 
     private ListNode top;

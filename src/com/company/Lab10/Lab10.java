@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class Lab10 {
 
     public Lab10 () {
-        //Q1();
+        Q1();
         Q2();
     }
 

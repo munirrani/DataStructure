@@ -1,6 +1,6 @@
 package com.company.Lab6;
 
-import com.company.ListNode;
+import com.company.Lab4.ListNode;
 
 public class PriorityQueue<T extends Comparable<T>> {
 
