@@ -3,7 +3,35 @@ package com.company.Tutorial1;
 public class Tutorial1 {
 
     public Tutorial1 () {
+        Q1();
+        Q2();
+        Q3();
         Q4();
+    }
+
+    private void Q1() {
+        Tarikh tarikh = new Tarikh(5, 11 ,2016);
+        System.out.println(tarikh.toString());
+    }
+
+    private void Q2() {
+        Sentence sentence = new Sentence("How are you?");
+        sentence.show();
+    }
+
+    private void Q3() {
+        System.out.println("5Mbps Subscription and 50GB");
+        DPlan dPlan = new DPlan(5, 50);
+        dPlan.displayPlan();
+        MPlan mPlan = new MPlan(5, 50);
+        mPlan.displayPlan();
+        if (dPlan.compareTo(mPlan) < 0) {
+            System.out.println("DPlan is cheaper as compared to MPlan");
+        } else if (dPlan.compareTo(mPlan) > 0) {
+            System.out.println("DPlan is more expensive as compared to MPlan");
+        } else {
+            System.out.println("DPlan is the same as compared to MPlan");
+        }
     }
 
     private void Q4() {
