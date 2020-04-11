@@ -113,19 +113,6 @@ public class LinkedList<T extends Comparable<T>> {
         }
     }
 
-    public void addNumber() { //Tutorial Q2
-        ListNode<T> currentNode = head;
-        Double value;
-        while (currentNode != null) {
-            value = (Double) currentNode.getData();
-            if (value > 20) {
-                value += 10.5;
-                currentNode.setData((T) value);
-            }
-            currentNode = currentNode.getLink();
-        }
-    }
-
     public T get(int index) {
         if (index >= length() || index < 0 || head == null) {
             return  null;
@@ -177,131 +164,61 @@ public class LinkedList<T extends Comparable<T>> {
         }
     }
 
-    public void splitList() {
-        System.out.println("Split the list into two");
-        ListNode currentNode = head;
-        ListNode secondNode;
-        ListNode middleNode;
+    public LinkedList<T> splitList(int index) {
+        LinkedList<T> linkedList = new LinkedList<>();
         int length = length() / 2;
         if (length() % 2 != 0) length++;
 
-        int index;
-        System.out.print("First List: ");
-        for (index = 0; index < length; index++) {
-            System.out.print(currentNode.toString());
-            currentNode = currentNode.getLink();
-        }
-        System.out.println();
-
-        secondNode = currentNode;
-        middleNode = currentNode;
-
-        for (int i = index; i < length(); i++) {
-            secondNode.setLink(currentNode.getLink());
-            if (currentNode.getLink() != null) {
-                secondNode = secondNode.getLink();
+        ListNode currentNode = head;
+        int count = 0;
+        if (index == 1) {
+            while (currentNode != null && count != length) {
+                linkedList.addNode((T)currentNode.getData());
+                count++;
+                currentNode = currentNode.getLink();
+            }
+        } else {
+            while (currentNode != null && count != length) {
+                count++;
+                currentNode = currentNode.getLink();
+            }
+            while (currentNode != null) {
+                linkedList.addNode((T)currentNode.getData());
                 currentNode = currentNode.getLink();
             }
         }
-
-        secondNode = middleNode;
-        System.out.print("Second List: ");
-        while (secondNode != null) {
-            System.out.print(secondNode.toString());
-            secondNode = secondNode.getLink();
-        }
-        System.out.println();
+        return linkedList;
     }
 
-    public void alternateSplit() {
-        System.out.println("Split the list by alternating the nodes");
+    public LinkedList<T> alternateSplit(int index) {
+        LinkedList<T> linkedList = new LinkedList<>();
         ListNode currentNode = head;
-
-        ListNode currentFirstNode = new ListNode(head.getData(), null);
-        ListNode firstListFirstNode = currentFirstNode;
-        ListNode currentSecondNode = new ListNode(head.getLink().getData(), null);
-        ListNode secondListFirstNode = currentSecondNode;
-
-        while (currentNode.getLink() != null) {
+        while (true) {
+            if (index == 1 && currentNode != null) linkedList.addNode((T)currentNode.getData());
             currentNode = currentNode.getLink();
-            if (currentNode.getLink() != null) {
-                currentNode = currentNode.getLink();
-                ListNode newNode = new ListNode(currentNode.getData(), null);
-                currentFirstNode.setLink(newNode);
-                currentFirstNode = currentFirstNode.getLink();
-            }
-            if (currentNode.getLink() != null) {
-                ListNode newNode2 = new ListNode(currentNode.getLink().getData(), null);
-                currentSecondNode.setLink(newNode2);
-                currentSecondNode = currentSecondNode.getLink();
-            }
+            if (currentNode == null) break;
+            if (index == 2 && currentNode != null) linkedList.addNode((T)currentNode.getData());
+            currentNode = currentNode.getLink();
+            if (currentNode == null) break;
         }
-
-        currentFirstNode = firstListFirstNode;
-        System.out.print("First list: ");
-        while (currentFirstNode != null) {
-            System.out.print(currentFirstNode.toString());
-            currentFirstNode = currentFirstNode.getLink();
-        }
-        System.out.println();
-
-        currentSecondNode = secondListFirstNode;
-        System.out.print("Second list: ");
-        while (currentSecondNode != null) {
-            System.out.print(currentSecondNode.toString());
-            currentSecondNode = currentSecondNode.getLink();
-        }
-        System.out.println();
+        return linkedList;
     }
 
-    public void mergeList() {
-        System.out.println("Merge the First List and Second List by alternating the nodes");
-        ListNode currentNode = head;
-
-        ListNode currentFirstNode = new ListNode(head.getData(), null);
-        ListNode firstListFirstNode = currentFirstNode;
-        ListNode currentSecondNode = new ListNode(head.getLink().getData(), null);
-        ListNode secondListFirstNode = currentSecondNode;
-
-        while (currentNode.getLink() != null) {
-            currentNode = currentNode.getLink();
-            if (currentNode.getLink() != null) {
-                currentNode = currentNode.getLink();
-                ListNode newNode = new ListNode(currentNode.getData(), null);
-                currentFirstNode.setLink(newNode);
-                currentFirstNode = currentFirstNode.getLink();
+    public LinkedList<T> mergeList(LinkedList<T> firstLinkedList, LinkedList<T> secondLinkedList) {
+        LinkedList<T> linkedList = new LinkedList<>();
+        ListNode firstListCurrentNode = firstLinkedList.getHead();
+        ListNode secondListCurrentNode = secondLinkedList.getHead();
+        while (firstListCurrentNode != null) {
+            if (firstListCurrentNode != null) {
+                linkedList.addNode((T)firstListCurrentNode.getData());
+                firstListCurrentNode = firstListCurrentNode.getLink();
             }
-            if (currentNode.getLink() != null) {
-                ListNode newNode2 = new ListNode(currentNode.getLink().getData(), null);
-                currentSecondNode.setLink(newNode2);
-                currentSecondNode = currentSecondNode.getLink();
+            if (secondListCurrentNode != null) {
+                linkedList.addNode((T) secondListCurrentNode.getData());
+                secondListCurrentNode = secondListCurrentNode.getLink();
             }
         }
-
-        currentFirstNode = firstListFirstNode;
-        currentSecondNode = secondListFirstNode;
-
-        ListNode mergeList = new ListNode(currentFirstNode.getData(), new ListNode(currentSecondNode.getData(), null));
-        ListNode mergeListFirstNode = mergeList;
-        mergeList = mergeList.getLink();
-        while (currentFirstNode.getLink() != null || currentSecondNode.getLink() != null) {
-            currentFirstNode = currentFirstNode.getLink(); //traverse awal
-            mergeList.setLink(new ListNode(currentFirstNode.getData(), null));
-            mergeList = mergeList.getLink();
-
-            if (currentSecondNode.getLink() != null) { //Avoid NPE for words with odd total number of characters
-                currentSecondNode = currentSecondNode.getLink();
-                mergeList.setLink(new ListNode(currentSecondNode.getData(), null));
-                mergeList = mergeList.getLink();
-            }
-        }
-
-        mergeList = mergeListFirstNode;
-        while (mergeList != null) {
-            System.out.print(mergeList.toString());
-            mergeList = mergeList.getLink();
-        }
-        System.out.println();
+        return linkedList;
     }
 
     public void reverseList(ListNode node) {

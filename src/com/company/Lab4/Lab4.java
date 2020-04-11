@@ -62,9 +62,29 @@ public class Lab4 {
         }
         System.out.print("The original list: ");
         characterLinkedList.showList();
-        characterLinkedList.splitList();
-        characterLinkedList.alternateSplit();
-        characterLinkedList.mergeList();
+
+        System.out.println("Split the list into two");
+
+        LinkedList<Character> firstHalf = characterLinkedList.splitList(1);
+        System.out.print("First List: ");
+        firstHalf.showList();
+        LinkedList<Character> secondHalf = characterLinkedList.splitList(2);
+        System.out.print("Second List: ");
+        secondHalf.showList();
+
+        System.out.println("Split the list by alternating the nodes");
+
+        LinkedList<Character> firstAlternateSplit = characterLinkedList.alternateSplit(1);
+        System.out.print("First list: ");
+        firstAlternateSplit.showList();
+        LinkedList<Character> secondAlternateSplit = characterLinkedList.alternateSplit(2);
+        System.out.print("Second list: ");
+        secondAlternateSplit.showList();
+
+        LinkedList<Character> alternateSplitMerge = characterLinkedList.mergeList(firstAlternateSplit, secondAlternateSplit);
+        System.out.println("Merge the First List and Second List by alternating the nodes");
+        alternateSplitMerge.showList();
+
         System.out.println("Reverse the list. Recursive method in LinkedList");
         characterLinkedList.reverseList(null);
         System.out.println("Reverse the list. Recursive method in tester class");
