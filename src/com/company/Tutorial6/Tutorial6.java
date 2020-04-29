@@ -101,7 +101,6 @@ public class Tutorial6 {
     }
 
     private boolean isPalindrome(String word) {
-        if (word.length() % 2 == 0) return false;
         Queue<Character> queue = new Queue<>();
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < word.length(); i++) {
