@@ -11,7 +11,6 @@ public class Maze {
     String[] mazeLines = new String[10];
     int width = 0, height = 0;
     Stack<Position> positionStack;
-    Position currentPosition;
     Position initialPosition;
 
     /*
@@ -23,28 +22,24 @@ public class Maze {
     2 - .
     3 - visited
      */
-
     Maze() {
         setup();
         setupBoard();
         printBoard();
-        currentPosition = initialPosition;
         while (true) {
+            Position currentPosition = positionStack.peek();
             if (canMove(currentPosition)) {
-                positionStack.push(currentPosition);
                 if (currentPosition != initialPosition) mark(currentPosition);
-                currentPosition = moveFromCurrentPosition(currentPosition);
+                positionStack.push(moveFromCurrentPosition(currentPosition));
             } else {
-                visited(positionStack.peek());
-                currentPosition = positionStack.pop();
+                markAsVisited(positionStack.pop());
             }
             if (isBesideFinish(currentPosition)) {
                 mark(currentPosition);
+                printBoard();
                 break;
             }
-            printBoard();
         }
-        printBoard();
     }
 
     private boolean canMove(Position position) {
@@ -55,39 +50,27 @@ public class Maze {
         return false;
     }
 
-    private boolean isAJunction(Position position) {
-        int count = 0;
-        if (getValue(position.x+1, position.y) != -2) count++;
-        if (getValue(position.x-1, position.y) != -2) count++;
-        if (getValue(position.x, position.y+1) != -2) count++;
-        if (getValue(position.x, position.y-1) != -2) count++;
-        return count > 2;
-    }
-
     private Position moveFromCurrentPosition(Position position) { // returns Position object that it can move to
+        Position newPosition = new Position();
         if (isAvailable(position.x+1, position.y)) {
-            position.x += 1;
+            newPosition.x = position.x + 1;
+            newPosition.y = position.y;
         } else if (isAvailable(position.x-1, position.y)) {
-            position.x -= 1;
+            newPosition.x = position.x - 1;
+            newPosition.y = position.y;
         } else if (isAvailable(position.x, position.y+1)) {
-            position.y += 1;
+            newPosition.y = position.y + 1;
+            newPosition.x = position.x;
         } else if (isAvailable(position.x, position.y-1)){
-            position.y -= 1;
+            newPosition.y = position.y - 1;
+            newPosition.x = position.x;
         }
-
-        Position position1 = new Position();
-        position1.x = position.x;
-        position1.y = position.y;
-        return position1;
+        return newPosition;
     }
 
     private boolean isAvailable(int x, int y) {
         if (getValue(x, y) == -1) return true;
         return false;
-    }
-
-    private boolean hasVisited(int x, int y) {
-        return getValue(x, y) == 3;
     }
 
     private int getValue(int x, int y) {
@@ -102,16 +85,12 @@ public class Maze {
         return false;
     }
 
-    private void visited(Position currentPosition) {
+    private void markAsVisited(Position currentPosition) {
         position[currentPosition.x][currentPosition.y] = 3;
     }
 
     private void mark(Position currentPosition) {
         position[currentPosition.x][currentPosition.y] = 2;
-    }
-
-    private void unMark(Position currentPosition) {
-        position[currentPosition.x][currentPosition.y] = -1;
     }
 
     private void setup() {
@@ -131,7 +110,7 @@ public class Maze {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        positionStack = new Stack<>();
+        positionStack = new Stack();
     }
 
     private void setupBoard() {
@@ -146,8 +125,8 @@ public class Maze {
                     position[j][i] = -2;
                 } else if (c == 'S') {
                     position[j][i] = 0;
-                    initialPosition.x = i;
-                    initialPosition.y = j;
+                    initialPosition.x = j;
+                    initialPosition.y = i;
                 } else if (c == 'F') {
                     position[j][i] = 1;
                 } else {
@@ -155,6 +134,7 @@ public class Maze {
                 }
             }
         }
+        positionStack.push(initialPosition);
     }
 
     private void printBoard() {
@@ -183,13 +163,13 @@ public class Maze {
         public int x, y;
 
         @Override
-        public int compareTo(Object o) {
-            return 0;
+        public String toString() {
+            return "(" + x + ", " + y + ")";
         }
 
         @Override
-        public String toString() {
-            return "(" + x + ", " + y + ")";
+        public int compareTo(Object o) {
+            return 0;
         }
     }
 }
