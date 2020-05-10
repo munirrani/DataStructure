@@ -46,7 +46,7 @@ public class Lab5 {
         infix = toSymbol(infix);
         System.out.println("The postfix expression is: " + infixToPostfix(infix));
         infix = infixToPostfix(infix);
-        countPrefixExpression(infix);
+        countPostfixExpression(infix);
     }
 
     private void Q3() {
@@ -254,33 +254,22 @@ public class Lab5 {
         return newExpression;
     }
 
-    private void countPrefixExpression(String expression) {
+    private void countPostfixExpression(String expression) {
         int value;
         Stack<String> stack = new Stack<>();
         String[] split = expression.split(" ");
-        for (int i = split.length - 1; i >= 0; i--) {
-            stack.push(split[i]); //read from behind
-            if (i <= split.length - 3) {
-                String first = stack.pop();
-                String second = stack.pop();
-                if (!isAnOperator(first) && !isAnOperator(second)) {
-                    String newCharacter = evaluate(first, second, stack.pop());
-                    stack.push(newCharacter);
-                } else {
-                    stack.push(second);
-                    stack.push(first);
-                }
+        for (int i = 0; i < split.length; i++) {
+            stack.push(split[i]);
+            if (isAnOperator(split[i])) {
+                String newCharacter = evaluate(stack.pop(), stack.pop(), stack.pop());
+                stack.push(newCharacter);
             }
-        }
-        while(stack.getSize() != 1) {
-            String newCharacter = evaluate(stack.pop(), stack.pop(), stack.pop());
-            stack.push(newCharacter);
         }
         value = Integer.valueOf(stack.pop());
         System.out.println("The result is: " + value);
     }
 
-    private String evaluate(String operand1, String operand2, String operator) {
+    private String evaluate(String operator, String operand2, String operand1) {
         int finalValue = 0;
         int value1 = Integer.valueOf(operand1);
         int value2 = Integer.valueOf(operand2);
