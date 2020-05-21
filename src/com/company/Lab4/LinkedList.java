@@ -88,9 +88,7 @@ public class LinkedList<T extends Comparable<T>> {
                 addFrontNode(t);
             } else {
                 ListNode currentNode = head;
-                T number;
                 while (true) {
-                    //System.out.println(t + " " + number);
                     if(currentNode.getLink() != null) {
                         if (t.compareTo((T)currentNode.getLink().getData()) < 0) {
                             ListNode newNode = new ListNode(t, currentNode.getLink());
@@ -98,7 +96,6 @@ public class LinkedList<T extends Comparable<T>> {
                             break;
                         } else { // move to the next node
                             currentNode = currentNode.getLink();
-                            number = (T) currentNode.getData();
                         }
                     } else { // add to the last element
                         ListNode newNode;
