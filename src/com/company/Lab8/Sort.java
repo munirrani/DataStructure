@@ -31,12 +31,12 @@ public class Sort<T extends Comparable<T>> {
     }
 
     public void bubbleSort() {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
-                if (arr[i].compareTo(arr[j]) < 0) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j].compareTo(arr[j+1]) < 0) {
                     T temp = arr[j];
-                    arr[j] = arr[i];
-                    arr[i] = temp;
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
                 }
             }
         }
