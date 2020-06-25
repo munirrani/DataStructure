@@ -1,0 +1,5 @@
+(x,y;z)
+(area<un[der{the}curv]e>nothing)
+(DS-{is[my>]}
+][
+datastructure
