@@ -87,9 +87,9 @@ public class BST<T extends Comparable<T>> {
         if (a == null) {
             found = false;
         } else if (data.compareTo(a.getData()) < 0) {
-            a.setLeftLink(remove(a, data));
+            a.setLeftLink(remove(a.getLeftLink(), data));
         } else if(data.compareTo(a.getData()) > 0) {
-            a.setRightLink(remove(a, data));
+            a.setRightLink(remove(a.getRightLink(), data));
         } else {
             a = removeNode(a);
             found = true;
